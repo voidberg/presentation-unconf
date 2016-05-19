@@ -1,0 +1,68 @@
+mixin slide(names, slideClasses)
+  if names
+    section(class=names+' '+slideClasses, data-bespoke-backdrop='backdrop ' + names.split(' ').map(function(name) { return 'backdrop--' + name; }).join(' '))
+      block
+  else
+    section
+      block
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Maintaining a Node.JS OSS package
+
+    link(href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Merriweather:300,400,400italic,700,700italic&subset=latin,latin-ext", rel="stylesheet", type="text/css")
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      +slide
+        img(src='images/deploying.png', width='40%')
+        br
+        h2 Maintaining a Node.JS OSS package
+        h4 and getting more free time
+
+      +slide
+        img.avatar(src='images/profile.jpg')
+        h3 Alexandru Badiu
+        h4 Development Lead @ BEN Group
+        h4 Cofounder @ Drupal Romania
+
+      +slide
+        h1 You'll need
+        h3 Accounts on GitHub and NPM
+        h3 Git and NodeJS installed
+
+      +slide
+        h1 This session
+        h2 Code quality
+        h2 Automating workflows
+
+      +slide
+        img(src='images/code_quality.png', width='100%')
+
+      +slide
+        h1 Code quality
+        h2 Code style
+        h2 Unit tests
+        h2 Code coverage
+
+      +slide
+        h1 Automating workflow
+        h2 Meaningful commits
+        h2 Semantic versioning
+        h2 Automatic release
+
+      +slide
+        h2 Thank you!
+        h3.
+          andu@ctrlz.ro
+        h3
+          | @voidberg
+
+
+    script(src='build/build.js')
